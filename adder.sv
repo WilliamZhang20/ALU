@@ -17,8 +17,8 @@ module alu_adder (
     assign carry_in = sub;  // Carry in 1 for two's complement subtraction
 
     // Perform addition
-    assign {carry_out, result_temp} = a + b_invert + carry_in;
-
+    assign {carry_out, result_temp} = a + b_invert + {31'b0, carry_in};
+    
     // Output sum
     assign sum = result_temp;
 
